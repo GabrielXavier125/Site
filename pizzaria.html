@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Delícia</title>
+    <link rel="stylesheet" href="pizzaria.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-pizza-slice"></i> Pizzaria Delícia</h1>
+            <p>A melhor pizza da cidade desde 1995</p>
+        </header>
+
+        <div class="menu">
+            <button id="btnHome"><i class="fas fa-home"></i> Início</button>
+            <button id="btnMenu"><i class="fas fa-utensils"></i> Cardápio</button>
+            <button id="btnOrder"><i class="fas fa-shopping-cart"></i> Faça seu Pedido</button>
+            <button id="btnAbout"><i class="fas fa-info-circle"></i> Sobre Nós</button>
+        </div>
+
+        <div class="special-offer">
+            <h3><i class="fas fa-star"></i> Promoção Especial!</h3>
+            <p>Segundas e Terças: Pizza Grande + Refri 2L por apenas R$ 49,90</p>
+        </div>
+
+        <!-- Seções do site -->
+        <section id="home" class="content-section">
+            <h2>Bem-vindo à Pizzaria Delícia</h2>
+            <p>Nossas pizzas são feitas com ingredientes frescos e massa artesanal, assadas no forno a lenha.</p>
+            <div class="pizza-highlights">
+                <div class="pizza-card">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pizza Margherita" class="pizza-img">
+                    <h3>Margherita</h3>
+                    <p>Molho de tomate, mussarela, manjericão fresco e tomate.</p>
+                    <p class="price">R$ 39,90</p>
+                </div>
+                <div class="pizza-card">
+                    <img src="https://images.unsplash.com/photo-1552539618-7eec9b4d1796?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pizza Calabresa" class="pizza-img">
+                    <h3>Calabresa</h3>
+                    <p>Molho de tomate, mussarela, calabresa fatiada e cebola.</p>
+                    <p class="price">R$ 44,90</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="content-section hidden">
+            <h2>Nosso Cardápio Completo</h2>
+            <div class="pizza-grid" id="pizzaMenu">
+                <!-- Pizzas serão carregadas via JavaScript -->
+            </div>
+        </section>
+
+        <section id="order" class="content-section hidden">
+            <h2>Faça seu Pedido</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Endereço:</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="pizza">Escolha sua Pizza:</label>
+                    <select id="pizza" required>
+                        <option value="">-- Selecione --</option>
+                        <!-- Opções serão preenchidas via JS -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="size">Tamanho:</label>
+                    <select id="size" required>
+                        <option value="P">Pequena (4 fatias)</option>
+                        <option value="M" selected>Média (6 fatias)</option>
+                        <option value="G">Grande (8 fatias)</option>
+                        <option value="F">Família (12 fatias)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Observações:</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+                <button type="submit">Finalizar Pedido</button>
+            </form>
+        </section>
+
+        <section id="about" class="content-section hidden">
+            <h2>Sobre Nós</h2>
+            <p>A Pizzaria Delícia foi fundada em 1995 pelo mestre pizzaiolo Antonio Bianchi, trazendo receitas tradicionais italianas com um toque brasileiro.</p>
+            <p>Nossos ingredientes são selecionados cuidadosamente e nossa massa é preparada diariamente de forma artesanal.</p>
+            
+            <h3>Horário de Funcionamento</h3>
+            <table>
+                <tr>
+                    <th>Dia</th>
+                    <th>Horário</th>
+                </tr>
+                <tr>
+                    <td>Segunda a Quinta</td>
+                    <td>18:00 - 23:00</td>
+                </tr>
+                <tr>
+                    <td>Sexta e Sábado</td>
+                    <td>18:00 - 00:00</td>
+                </tr>
+                <tr>
+                    <td>Domingo</td>
+                    <td>18:00 - 22:00</td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="footer">
+            <p>Pizzaria Delícia &copy; 2023 - Todos os direitos reservados</p>
+            <p>Rua das Pizzas, 123 - Centro | Telefone: (11) 1234-5678</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="pizzaria.js"></script>
+</body>
+</html>
