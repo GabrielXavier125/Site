@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const sections = {
         home: document.getElementById('home'),
         menu: document.getElementById('menu'),
+<<<<<<< HEAD
         order: document.getElementById('order'),
         about: document.getElementById('about'),
+=======
+>>>>>>> 6c298c092f5f2078420eedc90bf0a7b91aa52e5b
         add: document.getElementById('add')
     };
 
@@ -26,7 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const pizzaMenu = document.getElementById('pizzaMenu');
+<<<<<<< HEAD
     const pizzaSelect = document.getElementById('pizza');
+=======
+>>>>>>> 6c298c092f5f2078420eedc90bf0a7b91aa52e5b
     const addPizzaForm = document.getElementById('addPizzaForm');
 
     addPizzaForm.addEventListener('submit', function(e) {
@@ -74,16 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Preenche o select de pizzas no formulário
-    function loadPizzaOptions() {
-        pizzaSelect.innerHTML = '<option value="">-- Selecione --</option>';
-        pizzas.forEach(pizza => {
-            const option = document.createElement('option');
-            option.value = pizza.id;
-            option.textContent = `${pizza.name} - R$ ${pizza.price.toFixed(2)}`;
-            pizzaSelect.appendChild(option);
-        });
-    }
 
     // Mostra uma seção e esconde as outras
     function showSection(sectionToShow) {
@@ -93,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         sections[sectionToShow].classList.remove('hidden');
     }
 
-    // Event listeners para os botões do menu
     buttons.home.addEventListener('click', () => showSection('home'));
     buttons.menu.addEventListener('click', () => {
         loadMenu();
@@ -103,10 +98,15 @@ document.addEventListener('DOMContentLoaded', function() {
         loadPizzaOptions();
         showSection('order');
     });
+<<<<<<< HEAD
+=======
+    buttons.about.addEventListener('click', () => showSection('about'));
+>>>>>>> 6c298c092f5f2078420eedc90bf0a7b91aa52e5b
     buttons.add.addEventListener('click', () => {
 showSection('add');
 });
 
+<<<<<<< HEAD
     orderForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -121,6 +121,8 @@ showSection('add');
         
     });
 
+=======
+>>>>>>> 6c298c092f5f2078420eedc90bf0a7b91aa52e5b
     // Inicialização
     loadMenu();
     loadPizzaOptions();
