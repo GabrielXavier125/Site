@@ -9,24 +9,54 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 6, name: 'Frango com Catupiry', ingredients: 'Molho de tomate, mussarela, frango desfiado e catupiry', price: 54.90, image: 'https://images.unsplash.com/photo-1593246049226-ded77bf90326?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }
     ];
 
-    // Elementos do DOM
     const sections = {
         home: document.getElementById('home'),
         menu: document.getElementById('menu'),
         order: document.getElementById('order'),
-        about: document.getElementById('about')
+        about: document.getElementById('about'),
+        add: document.getElementById('add')
     };
 
     const buttons = {
         home: document.getElementById('btnHome'),
         menu: document.getElementById('btnMenu'),
         order: document.getElementById('btnOrder'),
-        about: document.getElementById('btnAbout')
+        about: document.getElementById('btnAbout'),
+        add: document.getElementById('btnAdd'),
     };
 
     const pizzaMenu = document.getElementById('pizzaMenu');
     const pizzaSelect = document.getElementById('pizza');
-    const orderForm = document.getElementById('orderForm');
+    const addPizzaForm = document.getElementById('addPizzaForm');
+
+    addPizzaForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('pizzaName').value.trim();
+    const ingredients = document.getElementById('pizzaDescription').value.trim();
+    const price = parseFloat(document.getElementById('pizzaPrice').value);
+    const image = document.getElementById('pizzaImage').value.trim();
+
+    if (!name || !ingredients || isNaN(price) || !image) {
+        alert('Por favor, preencha todos os campos corretamente.');
+        return;
+    }
+    else{
+        alert(`Pizza "${name}" adicionada com sucesso!`);
+        const newPizza = {
+        id: pizzas.length + 1,
+        name,
+        ingredients,
+        price,
+        image
+    };
+
+    pizzas.push(newPizza);
+    AddPizzaCard(newPizza);
+    loadPizzaOptions();
+    addPizzaForm.reset();
+    }
+});
 
     // Carrega o cardápio
     function loadMenu() {
@@ -73,9 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
         loadPizzaOptions();
         showSection('order');
     });
-    buttons.about.addEventListener('click', () => showSection('about'));
+    buttons.add.addEventListener('click', () => {
+showSection('add');
+});
 
-    // Envio do formulário de pedido
     orderForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -88,38 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const selectedPizza = pizzas.find(p => p.id == pizzaId);
         
-        if (!selectedPizza) {
-            alert('Por favor, selecione uma pizza');
-            return;
-        }
-        
-        // Aqui você normalmente enviaria os dados para um servidor
-        alert(`Pedido realizado com sucesso!\n\n${name}, seu pedido de pizza ${selectedPizza.name} (${getSizeName(size)}) foi recebido e chegará em aproximadamente 45 minutos.\n\nTotal: R$ ${calculatePrice(selectedPizza.price, size).toFixed(2)}`);
-        
-        // Limpa o formulário
-        orderForm.reset();
     });
-
-    // Funções auxiliares
-    function getSizeName(size) {
-        const sizes = {
-            'P': 'Pequena',
-            'M': 'Média',
-            'G': 'Grande',
-            'F': 'Família'
-        };
-        return sizes[size] || 'Média';
-    }
-
-    function calculatePrice(basePrice, size) {
-        const multipliers = {
-            'P': 0.7,
-            'M': 1,
-            'G': 1.3,
-            'F': 1.6
-        };
-        return basePrice * (multipliers[size] || 1);
-    }
 
     // Inicialização
     loadMenu();

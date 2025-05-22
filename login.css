@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Ubuntu', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    font-family: 'Ubuntu', Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #000080;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #e74c3c;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+.mensagem {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+footer img {
+    max-width: 150px;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    footer img {
+        max-width: 100px;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://th.bing.com/th/id/OIP.jUu8D8PM8tN-xzwgjqx6PgHaE8?pid=ImgDet&w=179&h=119&c=7&dpr=1,4');
+    background-size: cover;          /* Preenche toda a tela */
+    background-position: center;     /* Centraliza a imagem */
+    background-repeat: no-repeat;    /* Evita repetição */
+    height: 100vh;                   /* Garante que o body ocupe 100% da altura da viewport */
+    font-family: sans-serif;         /* Opcional, melhora a aparência do texto */
+}
+
+/* Adicione contraste para o conteúdo */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Leve transparência branca */
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}

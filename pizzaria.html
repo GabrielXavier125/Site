@@ -21,6 +21,7 @@
             <button id="btnMenu"><i class="fas fa-utensils"></i> Cardápio</button>
             <button id="btnOrder"><i class="fas fa-shopping-cart"></i> Faça seu Pedido</button>
             <button id="btnAbout"><i class="fas fa-info-circle"></i> Sobre Nós</button>
+            <button id="btnAdd"><i class="fas fa-plus"></i> Adicionar Pizza</button>
         </div>
 
         <div class="special-offer">
@@ -55,82 +56,35 @@
                 <!-- Pizzas serão carregadas via JavaScript -->
             </div>
         </section>
-
         <section id="order" class="content-section hidden">
-            <h2>Faça seu Pedido</h2>
-            <form id="orderForm">
-                <div class="form-group">
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Telefone:</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Endereço:</label>
-                    <input type="text" id="address" required>
-                </div>
-                <div class="form-group">
-                    <label for="pizza">Escolha sua Pizza:</label>
-                    <select id="pizza" required>
-                        <option value="">-- Selecione --</option>
-                        <!-- Opções serão preenchidas via JS -->
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="size">Tamanho:</label>
-                    <select id="size" required>
-                        <option value="P">Pequena (4 fatias)</option>
-                        <option value="M" selected>Média (6 fatias)</option>
-                        <option value="G">Grande (8 fatias)</option>
-                        <option value="F">Família (12 fatias)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="notes">Observações:</label>
-                    <textarea id="notes" rows="3"></textarea>
-                </div>
-                <button type="submit">Finalizar Pedido</button>
-            </form>
         </section>
 
         <section id="about" class="content-section hidden">
-            <h2>Sobre Nós</h2>
-            <p>A Pizzaria Do Xavier foi fundada em 1994 pelo mestre pizzaiolo Gabriel Xavier, trazendo receitas tradicionais italianas com um toque brasileiro.</p>
-            <p>Nossos ingredientes são selecionados cuidadosamente e nossa massa é preparada diariamente de forma artesanal. Acelerando a qualidade da sua pizza para sua vida.</p>
-            
-            <h3>Horário de Funcionamento</h3>
-            <table>
-                <tr>
-                    <th>Dia</th>
-                    <th>Horário</th>
-                </tr>
-                <tr>
-                    <td>Segunda a Quinta</td>
-                    <td>18:00 - 23:00</td>
-                </tr>
-                <tr>
-                    <td>Sexta e Sábado</td>
-                    <td>18:00 - 00:00</td>
-                </tr>
-                <tr>
-                    <td>Domingo</td>
-                    <td>18:00 - 22:00</td>
-                </tr>
-            </table>
+
         </section>
 
-        <div class="footer">
-            <p>Pizzaria Do Xavier &copy; 2023 - Todos os direitos reservados</p>
-            <p>Rua das Pizzas, 123 - Centro | Telefone: (11) 1234-5678</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
+        <section id="add" class="content-section hidden">
+    <h2>Adicionar Pizza</h2>
+    <form id="addPizzaForm">
+        <div class="form-group">
+            <label for="pizzaName">Nome da Pizza:</label>
+            <input type="text" id="pizzaName" required>
         </div>
-    </div>
+        <div class="form-group">
+            <label for="pizzaDescription">Descrição:</label>
+            <textarea id="pizzaDescription" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="pizzaPrice">Preço (R$):</label>
+            <input type="number" id="pizzaPrice" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="pizzaImage">URL da Imagem:</label>
+            <input type="url" id="pizzaImage" required>
+        </div>
+        <button type="submit">Adicionar ao Cardápio</button>
+    </form>
+</section>
 
     <script src="pizzaria.js"></script>
 </body>
